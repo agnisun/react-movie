@@ -1,0 +1,7 @@
+.search__header-input {
+  flex-basis: 100%;
+
+  input {
+    width: 100%;
+  }
+}

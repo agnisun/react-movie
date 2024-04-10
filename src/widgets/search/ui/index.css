@@ -1,0 +1,24 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.search__header {
+  font-size: 1.125rem;
+
+  input {
+    font-size: inherit;
+  }
+
+  input::placeholder {
+    font-weight: 600;
+  }
+}
+
+.search__main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  height: 100%;
+}

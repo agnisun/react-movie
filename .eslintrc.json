@@ -21,8 +21,18 @@
   "plugins": ["react", "prettier", "import"],
   "rules": {
     "indent": ["error", 2],
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": false,
+        "trailingComma": "es5",
+        "endOfLine": "lf",
+        "printWidth": 120
+      }
+    ],
     "linebreak-style": [0, "unix"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
     "react/react-in-jsx-scope": "off",
     "react/prop-types": 0,
     "import/no-unresolved": [2, { "caseSensitive": false }],
@@ -30,7 +40,14 @@
     "import/order": [
       2,
       {
-        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
         "newlines-between": "always"
       }
     ]
