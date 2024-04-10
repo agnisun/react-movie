@@ -1,7 +1,12 @@
 import "./index.css";
 import { InputSearch } from "../../../entities/input-search";
 
-export function View({ setPageMode, pageMode, setSearchInput, setCurrentPage }) {
+export function View({
+  setPageMode,
+  pageMode,
+  setSearchInput,
+  setCurrentPage,
+}) {
   const handlePageMode = (pageMode) => () => setPageMode(pageMode);
 
   return (
@@ -13,11 +18,17 @@ export function View({ setPageMode, pageMode, setSearchInput, setCurrentPage }) 
         >
           Search
         </button>
-        <button onClick={handlePageMode("rated")} className={`header__button ${pageMode === "rated" ? "active" : ""}`}>
+        <button
+          onClick={handlePageMode("rated")}
+          className={`header__button ${pageMode === "rated" ? "active" : ""}`}
+        >
           Rated
         </button>
       </div>
-      <InputSearch setCurrentPage={setCurrentPage} setSearchInput={setSearchInput} />
+      <InputSearch
+        setCurrentPage={setCurrentPage}
+        setSearchInput={setSearchInput}
+      />
     </header>
   );
 }

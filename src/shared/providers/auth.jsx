@@ -20,7 +20,9 @@ export const AuthProvider = ({ children }) => {
         sessionStorage.setItem("session_id", data.guest_session_id);
         setIsAuth(true);
       })
-      .catch((error) => setErrorMessage(error.message || "Something went wrong"));
+      .catch((error) =>
+        setErrorMessage(error.message || "Something went wrong"),
+      );
 
     window.addEventListener("offline", handleOffline);
 
@@ -32,6 +34,16 @@ export const AuthProvider = ({ children }) => {
   return isAuth ? (
     children
   ) : (
-    <div>{errorMessage && <Alert message="Error" description={errorMessage} type="error" showIcon banner />}</div>
+    <div>
+      {errorMessage && (
+        <Alert
+          message="Error"
+          description={errorMessage}
+          type="error"
+          showIcon
+          banner
+        />
+      )}
+    </div>
   );
 };

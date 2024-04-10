@@ -15,7 +15,7 @@ export const useRatedMoviesQuery = ({ currentPage } = { currentPage: 1 }) => {
 
     fetch(
       `https://api.themoviedb.org/3/guest_session/${sessionStorage.getItem("session_id")}/rated/movies?api_key=${import.meta.env.VITE_API_KEY}&page=${currentPage}`,
-      { headers }
+      { headers },
     )
       .then((response) => response.json())
       .then((data) => {

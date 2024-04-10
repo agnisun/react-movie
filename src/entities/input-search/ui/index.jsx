@@ -8,7 +8,8 @@ import { MoviesContext } from "../../../shared/providers/context";
 const inputDebounce = debounce(400, (cb) => cb());
 
 export function View() {
-  const { searchInput, setSearchInput, setCurrentPage } = useContext(MoviesContext);
+  const { searchInput, setSearchInput, setCurrentPage } =
+    useContext(MoviesContext);
   const [input, setInput] = useState(searchInput);
 
   const handleOnChange = (event) => {
@@ -24,7 +25,11 @@ export function View() {
 
   return (
     <div className="search__header-input">
-      <Input placeholder="Type to search..." value={input} onChange={handleOnChange} />
+      <Input
+        placeholder="Type to search..."
+        value={input}
+        onChange={handleOnChange}
+      />
     </div>
   );
 }

@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 
 import { headers } from "../http";
 
-export const useMoviesQuery = ({ searchInput, currentPage } = { searchInput: "", currentPage: 1 }) => {
+export const useMoviesQuery = (
+  { searchInput, currentPage } = { searchInput: "", currentPage: 1 },
+) => {
   const [data, setData] = useState({
     results: [],
     total_pages: 1,
@@ -21,7 +23,10 @@ export const useMoviesQuery = ({ searchInput, currentPage } = { searchInput: "",
       return;
     }
 
-    fetch(`https://api.themoviedb.org/3/search/movie?query=${searchInput}&page=${currentPage}`, { headers })
+    fetch(
+      `https://api.themoviedb.org/3/search/movie?query=${searchInput}&page=${currentPage}`,
+      { headers },
+    )
       .then((response) => response.json())
       .then((data) => {
         if (data.results.length === 0) setError("Movies not found");

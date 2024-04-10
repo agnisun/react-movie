@@ -7,6 +7,11 @@ export function View({ totalPages, currentPage, setCurrentPage }) {
   };
 
   return (
-    <Pagination style={{ alignSelf: "center" }} onChange={handleOnChange} current={+currentPage} total={+totalPages} />
+    <Pagination
+      style={{ alignSelf: "center" }}
+      onChange={handleOnChange}
+      current={+currentPage}
+      total={+totalPages}
+    />
   );
 }

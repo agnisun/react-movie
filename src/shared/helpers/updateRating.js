@@ -1,5 +1,7 @@
 export function updateRating(movies) {
-  const ratedMovies = JSON.parse(sessionStorage.getItem("ratedMovies") || JSON.stringify({}));
+  const ratedMovies = JSON.parse(
+    sessionStorage.getItem("ratedMovies") || JSON.stringify({}),
+  );
 
   movies.forEach((movie) => {
     const rating = ratedMovies[movie.id];

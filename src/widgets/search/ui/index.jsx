@@ -8,7 +8,8 @@ import { MoviesContext } from "../../../shared/providers/context";
 import "./index.css";
 
 export function View() {
-  const { moviesQuery, genresQuery, currentPage, setCurrentPage } = useContext(MoviesContext);
+  const { moviesQuery, genresQuery, currentPage, setCurrentPage } =
+    useContext(MoviesContext);
   const isLoading = moviesQuery.isLoading || genresQuery.isLoading;
   const errorMessage = genresQuery.error || moviesQuery.error;
   const handleOnChange = (page) => {
@@ -37,7 +38,13 @@ export function View() {
         )}
       </div>
       {errorMessage ? (
-        <Alert message="Error" description={errorMessage} type="error" showIcon banner />
+        <Alert
+          message="Error"
+          description={errorMessage}
+          type="error"
+          showIcon
+          banner
+        />
       ) : (
         isLoading && <Spin className="spin" />
       )}

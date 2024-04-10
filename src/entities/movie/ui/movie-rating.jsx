@@ -7,7 +7,9 @@ export function MovieRating({ movie }) {
     const newRating = 10 - i;
     setRating(newRating);
     movie.rating = newRating;
-    const ratedMovies = JSON.parse(sessionStorage.getItem("ratedMovies") || JSON.stringify({}));
+    const ratedMovies = JSON.parse(
+      sessionStorage.getItem("ratedMovies") || JSON.stringify({}),
+    );
 
     ratedMovies[movie.id] = newRating;
 
@@ -24,7 +26,7 @@ export function MovieRating({ movie }) {
         body: JSON.stringify({
           value: 10 - i,
         }),
-      }
+      },
     );
   };
 

@@ -29,7 +29,15 @@ export function View() {
           total={data.total_results}
         />
       )}
-      {error && <Alert message="Error" description={error} type="error" showIcon banner />}
+      {error && (
+        <Alert
+          message="Error"
+          description={error}
+          type="error"
+          showIcon
+          banner
+        />
+      )}
       {isLoading && !error && <Spin className="spin" />}
     </div>
   );
